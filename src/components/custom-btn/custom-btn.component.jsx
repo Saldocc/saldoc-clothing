@@ -2,9 +2,9 @@ import React from 'react'
 
 import './custom-btn.style.scss'
 
-const CustomBtn = ({ children, ...otherProps }) => {
+const CustomBtn = ({ children, btnType, ...otherProps }) => {
 	return (
-		<button className="custom-btn" {...otherProps}>
+		<button className={`${btnType ? btnType : ""} custom-btn`} {...otherProps}>
 			{children}
 		</button>
 	)
