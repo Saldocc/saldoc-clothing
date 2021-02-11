@@ -1,9 +1,10 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import FormInput from '../form-input/form-input.component'
 import CustomBtn from '../custom-btn/custom-btn.component'
 
-import { signInWithGoogle } from '../../firebase/firebase.utils'
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
 
 import './sign-in.styles.scss'
 
@@ -16,10 +17,19 @@ class SignIn extends React.Component {
 		}
 	}
 
-	handleSubmit = (e) => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 
-		this.setState({ email: '', password: '' })
+		const { email, password } = this.state
+
+		try {
+			await auth.signInWithEmailAndPassword(email, password).then(() => {
+				this.props.history.push('/')
+			})
+			this.setState({ email: '', password: '' })
+		} catch (error) {
+			console.error('Error sign in failed', error)
+		}
 	}
 
 	handleChange = (e) => {
@@ -28,7 +38,7 @@ class SignIn extends React.Component {
 	}
 
 	render() {
-		const { email, password } = this.state;
+		const { email, password } = this.state
 		return (
 			<div className="sign-in">
 				<h2>I already have an account</h2>
@@ -55,7 +65,10 @@ class SignIn extends React.Component {
 					/>
 					<div className="sign-in-buttons">
 						<CustomBtn type="submit">Sign In</CustomBtn>
-						<CustomBtn btnType="googleAuth" onClick={signInWithGoogle}>
+						<CustomBtn
+							type="button"
+							btnType="googleAuth"
+							onClick={signInWithGoogle}>
 							with Google
 						</CustomBtn>
 					</div>
@@ -65,4 +78,4 @@ class SignIn extends React.Component {
 	}
 }
 
-export default SignIn
+export default withRouter(SignIn)

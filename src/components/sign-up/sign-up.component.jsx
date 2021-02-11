@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import FormInput from '../form-input/form-input.component'
 import CustomBtn from '../custom-btn/custom-btn.component'
@@ -34,8 +35,9 @@ class SignUp extends React.Component {
 				email,
 				password
 			)
-			await createUserProfileDocuments(user, { displayName })
-
+			await createUserProfileDocuments(user, { displayName }).then(() => {
+				this.props.history.push('/')
+			})
 			this.setState({
 				displayName: '',
 				email: '',
@@ -56,8 +58,10 @@ class SignUp extends React.Component {
 		const { displayName, email, password, confirmPassword } = this.state
 		return (
 			<div className="sign-up">
-				<h2>I do not have account</h2>
-				<span className="subtitle">Sign up with your email and password</span>
+				<h2>I don't have account</h2>
+				<span className="subtitle">
+					If you don't have account yet, sign up with your email and password .
+				</span>
 				<form className="sign-up-form" onSubmit={this.handleSubmit}>
 					<FormInput
 						type="text"
@@ -98,4 +102,4 @@ class SignUp extends React.Component {
 	}
 }
 
-export default SignUp
+export default withRouter(SignUp)
