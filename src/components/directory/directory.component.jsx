@@ -11,13 +11,13 @@ class Directory extends React.Component {
 			sections: [
 				{
 					title: "Women's",
-					imageUrl: 'https://i.ibb.co/RjL9Y8B/woman.png',
+					imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
 					id: 1,
 					linkUrl: 'shop/womans',
 				},
 				{
 					title: "Men's",
-					imageUrl: 'https://i.ibb.co/kBH8Qhq/man.png',
+					imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
 					id: 2,
 					linkUrl: 'shop/mans',
 				},
