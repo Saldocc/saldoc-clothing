@@ -1,0 +1,15 @@
+.search-icon {
+	width: 36px;
+	height: 36px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	margin: 0 12px;
+
+	.search-outlined-icon {
+		width: 24px;
+		height: 24px;
+	}
+}

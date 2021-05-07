@@ -1,7 +1,7 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 
-import logo from '../../assets/logo.svg'
+import logoSquare from '../../assets/logo-square.png'
 
 const StripeButton = ({ price }) => {
 	const priceForStripe = price * 100
@@ -17,7 +17,7 @@ const StripeButton = ({ price }) => {
 			billingAddress
 			shippingAddress
 			allowRememberMe
-			image={logo}
+			image={logoSquare}
 			description={`Your total is ${price}₺`}
 			amount={priceForStripe}
 			token={onToken}

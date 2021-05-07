@@ -1,9 +1,31 @@
 .homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.background-image {
+		position: relative;
+		img {
+			width: 100%;
+		}
+
+		.homepage-title {
+			position: absolute;
+			left: 0;
+			top: 150px;
+			width: 100%;
+
+			h1 {
+				width: fit-content;
+				margin-bottom: 4px;
+				padding: 4px 8px;
+				font-size: 48px;
+				line-height: 58px;
+				text-transform: uppercase;
+				font-weight: normal;
+				color: #000;
+				background: rgba(255, 255, 255, 0.4);
+			}
+		}
+	}
 }
-
-
-
