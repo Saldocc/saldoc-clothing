@@ -2,6 +2,7 @@ import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 
 import logoSquare from '../../assets/logo-square.png'
+import CustomBtn from '../../components/custom-btn/custom-btn.component'
 
 const StripeButton = ({ price }) => {
 	const priceForStripe = price * 100
@@ -22,7 +23,7 @@ const StripeButton = ({ price }) => {
 			amount={priceForStripe}
 			token={onToken}
 			stripeKey={publisableKey}>
-			<button className="btn btn-primary">Pay Now</button>
+			<CustomBtn btnType={'inverted'}>Pay Now</CustomBtn>
 		</StripeCheckout>
 	)
 }

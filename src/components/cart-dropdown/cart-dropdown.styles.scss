@@ -1,13 +1,13 @@
 .cart-dropdown {
 	position: absolute;
-	width: 297px;
-	height: 480px;
+	width: 370px;
+	height: 450px;
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
 	background-color: white;
-	top: 90px;
-	right: 40px;
+	top: 85px;
+	right: 20px;
 	z-index: 5;
 	box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
 
@@ -16,14 +16,37 @@
 		display: flex;
 		flex-direction: column;
 		overflow-y: auto;
-	}
-
-	.empty-message {
-		font-size: 18px;
-		margin: 60px auto;
+		margin-bottom: 10px;
 	}
 
 	button {
 		margin-top: auto;
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #62626d;
+		border-radius: 8px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+	}
+	::-webkit-scrollbar-track {
+		background: #ffffff;
+		border-radius: 10px;
+		box-shadow: inset 7px 10px 12px #f0f0f0;
+	}
+}
+
+.cart-dropdown.small {
+	height: 150px;
+
+	.empty-message {
+		font-size: 18px;
+		margin: 30px auto;
+		font-weight: 600;
 	}
 }

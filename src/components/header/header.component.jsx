@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
+import { selectCartHidden } from '../../redux/cart/cart.selectors'
+import { selectCurrentUser } from '../../redux/user/user.selectors'
+
 import CartIcon from '../cart-icon/cart-icon.component'
 import SearchIcon from '../search-icon/search-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
-
-import { selectCartHidden } from '../../redux/cart/cart.selectors'
-import { selectCurrentUser } from '../../redux/user/user.selectors'
 
 import { auth } from '../../firebase/firebase.utils'
 
@@ -21,7 +21,7 @@ const Header = ({ currentUser, hidden }) => {
 		const header = document.getElementById('myHeader')
 		const sticky = header.offsetTop
 		const scrollCallBack = window.addEventListener('scroll', () => {
-			if (window.pageYOffset > sticky + 150) {
+			if (window.pageYOffset > sticky + 200) {
 				header.classList.add('sticky')
 			} else {
 				header.classList.remove('sticky')

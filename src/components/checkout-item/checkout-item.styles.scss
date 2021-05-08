@@ -2,13 +2,18 @@
 	width: 100%;
 	display: flex;
 	min-height: 100px;
-	border-bottom: 1px solid darkgrey;
-	padding: 15px 0;
+	border-top: 1px solid #ebebeb;
+	padding: 30px 50px;
 	font-size: 20px;
 	align-items: center;
+	background-color: #fff;
+
+	&:first-of-type {
+		border: none !important;
+	}
 
 	.image-container {
-		width: 23%;
+		width: 20%;
 		padding-right: 15px;
 		display: flex;
 		align-items: center;
@@ -17,31 +22,79 @@
 		img {
 			width: 100%;
 			height: 100%;
-			max-width: 150px;
+			max-width: 130px;
+			height: 180px;
+			object-fit: cover;
 		}
 	}
-	.name,
-	.quantity,
-	.price {
-		width: 23%;
-	}
 
-	.quantity {
+	.info-conteiner {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 80%;
+		.info-left {
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			.name {
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 29px;
+				color: #0b090a;
+				margin-bottom: 8px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+			}
 
-		.arrow {
-			cursor: pointer;
-			user-select: none;
+			.remove-button {
+				font-size: 16px;
+				line-height: 19px;
+				color: #660708;
+				user-select: none;
+				cursor: pointer;
+				width: fit-content;
+			}
 		}
 
-		.value {
-			margin: 0 10px;
-			user-select: none;
-		}
-	}
+		.info-right {
+			display: flex;
+			align-items: center;
+			.quantity {
+				display: flex;
+				align-items: center;
+				background: #f5f3f4;
+				padding: 0 6px;
+				.arrow {
+					font-size: 20px;
+					line-height: 29px;
+					color: #666666;
+					cursor: pointer;
+					user-select: none;
+				}
+				.value {
+					font-weight: 600;
+					font-size: 18px;
+					line-height: 22px;
+					color: #666666;
+					padding-left: 20px;
+					padding-right: 20px;
+					user-select: none;
+				}
+			}
 
-	.remove-button {
-		padding-left: 12px;
-		cursor: pointer;
+			.price {
+				width: 100px;
+				margin-left: 100px;
+				text-align: right;
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 29px;
+				color: #0b090a;
+			}
+		}
 	}
 }

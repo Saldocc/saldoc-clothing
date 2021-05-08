@@ -9,7 +9,7 @@ const HomePage = () => {
 	return (
 		<div className="homepage">
 			<div className="background-image">
-				<img src={BackgroundHomepage} alt="background-image" />
+				<img src={BackgroundHomepage} alt="background" />
 				<div className="homepage-title">
 					<div className="container">
 						<h1>OPEN UP FROM</h1>
