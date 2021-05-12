@@ -9,7 +9,7 @@ import {
 import './checkout-item.styles.scss'
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
-	const { name, imageUrl, price, quantity } = cartItem
+	const { name, imageUrl, price, quantity, salePrice, saleStatus } = cartItem
 	return (
 		<div className="checkout-item">
 			<div className="image-container">
@@ -32,7 +32,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
 							&#10095;
 						</div>
 					</div>
-					<span className="price">{price} ₺</span>
+					<span className="price">{saleStatus ? salePrice : price} ₺</span>
 				</div>
 			</div>
 		</div>

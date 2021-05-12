@@ -8,7 +8,7 @@ import CustomBtn from '../custom-btn/custom-btn.component'
 import './collection-item.styles.scss'
 
 const CollectionItem = ({ item, addItem }) => {
-	const { name, imageUrl, price } = item
+	const { name, imageUrl, price, salePrice, saleStatus, inStock } = item
 	return (
 		<div className="col-lg-3 col-md-4 col-sm-4 ">
 			<div className="collection-item ">
@@ -16,16 +16,28 @@ const CollectionItem = ({ item, addItem }) => {
 				<div className="collection-footer">
 					<div className="collection-footer-info">
 						<span className="name">{name}</span>
-						<div className="price">
-							<span className="price-old">{price} ₺</span>
-							<span className="price-new">{price} ₺</span>
-						</div>
+						{inStock ? (
+							<div className="price">
+								{saleStatus ? (
+									<>
+										<span className="price-old">{price} ₺</span>
+										<span className="price-new">{salePrice} ₺</span>
+									</>
+								) : (
+									<span className="price-new">{price} ₺</span>
+								)}
+							</div>
+						) : (
+							<span>Out of stock</span>
+						)}
 					</div>
-					<CustomBtn onClick={() => addItem(item)} btnType={'inverted'}>
-						Add to Cart
-					</CustomBtn>
+					{inStock && (
+						<CustomBtn onClick={() => addItem(item)} btnType={'inverted'}>
+							Add to Cart
+						</CustomBtn>
+					)}
 				</div>
-				<div className="sale">SALE</div>
+				{saleStatus && <div className="sale">SALE</div>}
 			</div>
 		</div>
 	)
