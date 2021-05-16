@@ -15,7 +15,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selectors'
 
-import { selectCollectionsForPreview } from './redux/shop/shop.selector'
+//import { selectCollectionsForPreview } from './redux/shop/shop.selector'
 
 import { auth, createUserProfileDocuments, addCollectionAndDocuments } from './firebase/firebase.utils'
 
