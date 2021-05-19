@@ -5,6 +5,7 @@ import { createStructuredSelector } from 'reselect'
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
+import { signOutStart } from '../../redux/user/user.actions'
 
 import CartIcon from '../cart-icon/cart-icon.component'
 import SearchIcon from '../search-icon/search-icon.component'
@@ -16,7 +17,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg'
 
 import './header.styles.scss'
 
-const Header = ({ currentUser, hidden }) => {
+const Header = ({ currentUser, hidden, signOutStart }) => {
 	useEffect(() => {
 		const header = document.getElementById('myHeader')
 		const sticky = header.offsetTop
@@ -48,7 +49,7 @@ const Header = ({ currentUser, hidden }) => {
 					CONTACT
 				</Link>
 				{currentUser ? (
-					<div className="option" onClick={() => auth.signOut()}>
+					<div className="option" onClick={signOutStart}>
 						SIGN OUT
 					</div>
 				) : (
@@ -64,9 +65,13 @@ const Header = ({ currentUser, hidden }) => {
 	)
 }
 
+const mapDispatchToProps = (dispatch) => ({
+	signOutStart: () => dispatch(signOutStart()),
+})
+
 const mapStateToProps = createStructuredSelector({
 	currentUser: selectCurrentUser,
 	hidden: selectCartHidden,
 })
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
