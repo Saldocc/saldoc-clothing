@@ -11,8 +11,6 @@ import CartIcon from '../cart-icon/cart-icon.component'
 import SearchIcon from '../search-icon/search-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
-import { auth } from '../../firebase/firebase.utils'
-
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 
 import './header.styles.scss'
