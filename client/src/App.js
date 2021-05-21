@@ -16,6 +16,7 @@ import { selectCurrentUser } from './redux/user/user.selectors'
 import { checkUserSession } from './redux/user/user.actions'
 
 import './App.css';
+
 const App = ({ checkUserSession, currentUser }) => {
 
   useEffect(() => {
