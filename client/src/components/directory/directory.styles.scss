@@ -3,18 +3,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-top: -300px;
-}
-
-@media (min-width: 992px) and (max-width: 1780.98px) {
-	.directory-menu {
-		margin-top: -20px;
-	}
+	margin-top: -150px;
 }
 
 @media screen and (max-width: 991.98px) {
 	.directory-menu {
-		margin-top: 30px;
+		margin-top: -250px;
 		flex-direction: column;
 	}
 }

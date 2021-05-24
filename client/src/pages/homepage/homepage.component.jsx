@@ -8,8 +8,14 @@ import './homepage.styles.scss'
 const HomePage = () => {
 	return (
 		<div className="homepage">
-			<div className="background-image">
-				<img src={BackgroundHomepage} alt="background" />
+			<div className="background-image-container">
+				<div
+					className="background-image"
+					style={{
+						backgroundImage: `url(${BackgroundHomepage})`,
+					}}
+				/>
+				{/* <img src={BackgroundHomepage} alt="background" /> */}
 				<div className="homepage-title">
 					<div className="container">
 						<h1>OPEN UP FROM</h1>

@@ -98,3 +98,59 @@
 		}
 	}
 }
+
+@media screen and (max-width: 992px) {
+	.checkout-item {
+		min-height: 80px;
+		padding: 20px 20px;
+		font-size: 16px;
+
+		.image-container {
+			padding-right: 10px;
+
+			img {
+				height: 80px;
+			}
+		}
+
+		.info-conteiner {
+			.info-left {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+				.name {
+					font-size: 16px;
+					line-height: 20px;
+					margin-bottom: 4px;
+				}
+
+				.remove-button {
+					font-size: 14px;
+				}
+			}
+
+			.info-right {
+				.quantity {
+					padding: 0 6px;
+					.arrow {
+						font-size: 16px;
+						line-height: 20px;
+					}
+					.value {
+						font-size: 16px;
+						line-height: 22px;
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				}
+
+				.price {
+					width: 50px;
+					margin-left: 10px;
+					font-size: 16px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}

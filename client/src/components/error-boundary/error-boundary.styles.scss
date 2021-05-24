@@ -1,0 +1,17 @@
+.error-text {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: calc(100vh - 200px);
+	h1 {
+		font-size: 50px;
+		font-weight: 900;
+		margin-top: 0;
+		color: #0b090a;
+		text-shadow: -1px -1px 0 #c78aff, 1px 1px 0 #660708;
+		letter-spacing: 5px;
+		margin-bottom: 30px;
+	}
+}

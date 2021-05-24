@@ -3,11 +3,9 @@
 	flex-direction: column;
 	align-items: center;
 
-	.background-image {
+	.background-image-container {
 		position: relative;
-		img {
-			width: 100%;
-		}
+		width: 100%;
 
 		.homepage-title {
 			position: absolute;
@@ -30,9 +28,17 @@
 	}
 }
 
+.background-image {
+	width: 100%;
+	height: 500px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 @media screen and (max-width: 992px) {
 	.homepage {
-		.background-image {
+		.background-image-container {
 			.homepage-title {
 				position: absolute;
 				left: 0;
@@ -50,7 +56,7 @@
 
 @media screen and (max-width: 492px) {
 	.homepage {
-		.background-image {
+		.background-image-container {
 			.homepage-title {
 				h1 {
 					font-size: 28px;
