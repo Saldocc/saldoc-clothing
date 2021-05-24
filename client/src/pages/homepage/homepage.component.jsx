@@ -17,7 +17,7 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container">
+			<div className="container w-100">
 				<Directory />
 			</div>
 		</div>

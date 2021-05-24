@@ -1,13 +1,13 @@
 .header {
-	height: 85px;
-	width: 100%;
-	background: #0b090a;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	position: relative;
+	height: 85px;
+	width: 100%;
+	background: #0b090a;
 	transition: all 0.2 ease-in-out;
-	z-index: 10;
+	z-index: 300;
 
 	.logo-container {
 		height: 36px;
@@ -19,25 +19,35 @@
 		}
 	}
 
-	.options {
-		width: 100%;
-		height: 100%;
+	.header-content {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		width: 100%;
+		height: 100%;
 		padding-right: 33px;
-
-		.option {
-			cursor: pointer;
-			padding: 10px 12px;
-			transition: all 0.2s ease-in-out;
-			font-weight: 600;
-			font-size: 16px;
-			line-height: 19px;
-			color: #666666;
-			&:hover {
-				color: #fff;
+		.options {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			.option {
+				cursor: pointer;
+				padding: 10px 12px;
+				transition: all 0.2s ease-in-out;
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 19px;
+				color: #666666;
+				&:hover {
+					color: #fff;
+				}
 			}
+		}
+
+		.header-btn {
+			display: none;
 		}
 	}
 }
@@ -45,4 +55,98 @@
 .header.sticky {
 	position: fixed;
 	top: 0;
+}
+
+@media screen and (max-width: 992px) {
+	.header {
+		height: 70px;
+		.logo-container {
+			height: 18px;
+			width: 100%;
+			padding-left: 20px;
+			.logo {
+				height: 18px;
+				width: 70px;
+			}
+		}
+
+		.header-content {
+			padding-right: 20px;
+			.options {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				width: 100%;
+				background: #0b090a;
+				height: 0px;
+				transition: all 0.3s ease-in-out;
+				overflow-y: hidden;
+				top: 70px;
+				left: 0px;
+				.option {
+					width: 100%;
+					text-align: left;
+					padding: 1rem 0;
+				}
+			}
+
+			.header-btn {
+				display: flex !important;
+				z-index: 15;
+				margin-top: 7px;
+
+				.lines {
+					display: inline-block;
+					width: 21px;
+					height: 21px;
+					position: relative;
+					text-align: right;
+					margin: 0 0 0 10px;
+					span {
+						display: block;
+						width: 20px;
+						height: 7px;
+						border-top: 2px solid #660708;
+					}
+				}
+
+				.lines.show {
+					span:nth-child(1) {
+						position: absolute;
+						bottom: 6px;
+						left: 2px;
+						width: 20px;
+						height: 7px;
+						transform: rotate(-45deg);
+						transition: all 0.3s ease-in-out;
+						border-color: #fff;
+					}
+
+					span:nth-child(2) {
+						display: none;
+					}
+
+					span:nth-child(3) {
+						position: absolute;
+						bottom: 6px;
+						left: -1px;
+						width: 20px;
+						height: 7px;
+						transform: rotate(45deg);
+						transition: all 0.3s ease-in-out;
+						border-color: #fff;
+					}
+				}
+			}
+
+			.options.show {
+				height: calc(100vh - 570px);
+				padding: 1rem 1.25rem;
+				overflow-y: auto;
+				border-top: 1px solid #660708;
+			}
+		}
+	}
 }

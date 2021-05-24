@@ -50,3 +50,13 @@
 		font-weight: 600;
 	}
 }
+
+@media screen and (max-width: 991.98px) {
+	.cart-dropdown {
+		width: 320px;
+		height: 400px;
+		padding: 15px;
+		top: 70px;
+		right: 0;
+	}
+}

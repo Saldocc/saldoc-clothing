@@ -3,3 +3,9 @@
 	flex-direction: column;
 	padding: 30px;
 }
+
+@media screen and (max-width: 992px) {
+	.collections-overview {
+		padding: 20px 5px;
+	}
+}

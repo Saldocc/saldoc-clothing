@@ -29,3 +29,38 @@
 		}
 	}
 }
+
+@media screen and (max-width: 992px) {
+	.homepage {
+		.background-image {
+			.homepage-title {
+				position: absolute;
+				left: 0;
+				top: 30px;
+				width: 100%;
+
+				h1 {
+					font-size: 36px;
+					line-height: 48px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 492px) {
+	.homepage {
+		.background-image {
+			.homepage-title {
+				h1 {
+					font-size: 28px;
+					line-height: 36px;
+				}
+			}
+		}
+	}
+
+	.w-100 {
+		width: 100%;
+	}
+}

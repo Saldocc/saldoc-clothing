@@ -30,3 +30,9 @@
 		user-select: none;
 	}
 }
+
+@media screen and (max-width: 992px) {
+	.cart-icon {
+		margin: 0 6px;
+	}
+}
