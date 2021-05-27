@@ -7,7 +7,6 @@ import { store, persistor } from './redux/store'
 
 import * as serviceWorker from './serviceWorkerRegistration'
 
-import './index.css';
 import App from './App';
 
 
